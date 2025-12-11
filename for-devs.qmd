@@ -1,0 +1,112 @@
+
+
+# Developer Information
+
+This documentation is hosted in a separate repository from the template itself.
+
+- **Template Repository**: <https://github.com/zhaw-lsfm/quarto-thesis>
+- **Documentation Repository**: <https://github.com/zhaw-lsfm/quarto-thesis-docs>
+
+## Why Separate Repositories?
+
+The separation allows:
+
+1. Template testing without Quarto project interference
+2. Independent documentation updates
+3. Cleaner template installation for students
+4. Better CI/CD workflows for each purpose
+
+## Template Repository Structure
+
+The template repository (`zhaw-lsfm/quarto-thesis`) contains:
+
+1. **Quarto Extension** (`_extensions/zhaw-lsfm/`) - The actual extension with Typst templates, filters, and shortcodes
+2. **Template Scaffolding** (`template.qmd`) - Example document that students use as a starting point
+3. **Minimal Landing Page** (`index.qmd`) - Quick start information with link to full docs
+
+Students install with:
+
+```bash
+quarto use template zhaw-lsfm/quarto-thesis
+```
+
+This installs the extension and provides `template.qmd` (renamed to match the parent directory), plus supporting files like `cover.png` and `references.bib`. Files listed in `.quartoignore` are NOT provided to students.
+
+## Documentation Repository Structure
+
+This repository (`zhaw-lsfm/quarto-thesis-docs`) contains:
+
+- Full documentation website
+- ZHAW requirements and guidelines
+- Developer contribution guide
+- User manual and tutorials
+
+## Contributing to Template
+
+To contribute to the template:
+
+1. Clone the template repository:
+   ```bash
+   git clone https://github.com/zhaw-lsfm/quarto-thesis.git
+   ```
+
+2. Make changes to:
+   - `_extensions/zhaw-lsfm/` for extension functionality
+   - `template.qmd` for the example document
+   - `index.qmd` for the landing page
+
+3. Test changes:
+   ```bash
+   # Test template rendering
+   quarto render template.qmd
+
+   # Test installation in clean directory
+   mkdir ../test-install && cd ../test-install
+   quarto use template zhaw-lsfm/quarto-thesis
+   ```
+
+4. Commit and push or create pull request
+
+5. Publish landing page:
+   ```bash
+   quarto publish gh-pages
+   ```
+
+## Contributing to Documentation
+
+To contribute to this documentation:
+
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/zhaw-lsfm/quarto-thesis-docs.git
+   ```
+
+2. Make changes to relevant .qmd files:
+   - `index.qmd` - Welcome/overview
+   - `getting-started.qmd` - Installation guide
+   - `manual.qmd` - User manual
+   - `zhaw-requirements.qmd` - ZHAW requirements
+   - `for-devs.qmd` - This file
+
+3. Preview locally:
+   ```bash
+   quarto preview
+   ```
+
+4. Commit and push or create pull request
+
+5. Publish documentation:
+   ```bash
+   quarto publish gh-pages
+   ```
+
+The documentation website is published at: <https://zhaw-lsfm.github.io/quarto-thesis-docs>
+
+## Template Demo Files
+
+The rendered template examples (template.pdf and template.html) are hosted on the template repository's GitHub Pages:
+
+- PDF Demo: <https://zhaw-lsfm.github.io/quarto-thesis/template.pdf>
+- HTML Demo: <https://zhaw-lsfm.github.io/quarto-thesis/template.html>
+
+These are linked from this documentation site's navigation menu.
