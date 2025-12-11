@@ -22,14 +22,18 @@ Features:
 - Class shortcuts for removing a header numbering and removing it from the table of contents (see [Manual](manual.qmd#sec-chapter-numbering)).
 - The template also serves as a boilerplate for your thesis document, so you can get started quickly (bibtex included and a scaffold of the document structure)
 
-:::{.callout-note}
-## Todo
+## Examples
 
-- Add the possibility to add callout todos, that can be hidden
-- Add text on the html version
-- Write about how quarto projects are not supported
+Here are some examples of student projects that have used this template:
 
-:::
+- **Airport Mowing Detection**  by Florian Klaver (2025)
+  - [Website](https://klaveflo.github.io/airport-mowing-detection/)
+  - [Repository](https://github.com/klaveflo/airport-mowing-detection)
+- **Modelling Wildlife Corridors** by Lukas Buchmann (2025)
+  - [Website](https://github.zhaw.ch/pages/buchmluk/PA2-Modelling_Wildlife_Corridors/)
+  - [Repository](https://github.zhaw.ch/buchmluk/PA2-Modelling_Wildlife_Corridors/)
+
+
 
 
 
