@@ -162,8 +162,14 @@ div.csl-indent {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#examples" id="toc-examples" class="nav-link active" data-scroll-target="#examples">Examples</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/zhaw-lsfm/quarto-thesis-docs/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/zhaw-lsfm/quarto-thesis-docs/blob/main/index.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/zhaw-lsfm/quarto-thesis-docs/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -199,26 +205,25 @@ div.csl-indent {
 <li>Class shortcuts for removing a header numbering and removing it from the table of contents (see <a href="./manual.html#sec-chapter-numbering">Manual</a>).</li>
 <li>The template also serves as a boilerplate for your thesis document, so you can get started quickly (bibtex included and a scaffold of the document structure)</li>
 </ul>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Todo
-</div>
-</div>
-<div class="callout-body-container callout-body">
+<section id="examples" class="level2">
+<h2 class="anchored" data-anchor-id="examples">Examples</h2>
+<p>Here are some examples of student projects that have used this template:</p>
 <ul>
-<li>Add the possibility to add callout todos, that can be hidden</li>
-<li>Add text on the html version</li>
-<li>Write about how quarto projects are not supported</li>
+<li><strong>Airport Mowing Detection</strong> by Florian Klaver (2025)
+<ul>
+<li><a href="https://klaveflo.github.io/airport-mowing-detection/">Website</a></li>
+<li><a href="https://github.com/klaveflo/airport-mowing-detection">Repository</a></li>
+</ul></li>
+<li><strong>Modelling Wildlife Corridors</strong> by Lukas Buchmann (2025)
+<ul>
+<li><a href="https://github.zhaw.ch/pages/buchmluk/PA2-Modelling_Wildlife_Corridors/">Website</a></li>
+<li><a href="https://github.zhaw.ch/buchmluk/PA2-Modelling_Wildlife_Corridors/">Repository</a></li>
+</ul></li>
 </ul>
-</div>
-</div>
 
 
 
+</section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-zhaw2024de" class="csl-entry" role="listitem">
@@ -301,7 +306,7 @@ div.csl-indent {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/zhaw-lsfm\.github\.io\/quarto-thesis-docs\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -633,4 +638,4 @@ div.csl-indent {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/zhaw-lsfm/quarto-thesis-docs/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/zhaw-lsfm/quarto-thesis-docs/blob/main/index.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/zhaw-lsfm/quarto-thesis-docs/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/zhaw-lsfm/quarto-thesis-docs/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/zhaw-lsfm/quarto-thesis-docs/blob/main/index.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/zhaw-lsfm/quarto-thesis-docs/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
