@@ -14,12 +14,12 @@ website:
       - getting-started.qmd
       - manual.qmd
       - zhaw-requirements.qmd
-      - text: "📄 Template Demo"
+      - text: "Template Demo"
         menu:
-        - href: https://zhaw-lsfm.github.io/quarto-thesis/template.pdf
+        - href: https://zhaw-lsfm.github.io/quarto-thesis/Robuste-Regression-und-Outlier-Erkennung.pdf
           text: "PDF (for submission)"
           target: _blank
-        - href: https://zhaw-lsfm.github.io/quarto-thesis/template.html
+        - href: https://zhaw-lsfm.github.io/quarto-thesis/
           text: "HTML (for development)"
           target: _blank
     right:

@@ -1,27 +1,54 @@
 
 # Getting started
 
-To install the extension use the command:
+:::{.callout-important}
+## Quarto version requirement
+
+This template requires **Quarto >= 1.9.18**. Check your version with `quarto --version` and update at <https://quarto.org/docs/download/> if needed.
+:::
+
+To install the template, create a new directory for your thesis and run:
 
 ```bash
 quarto use template zhaw-lsfm/quarto-thesis
 ```
 
-This will install the format extension and create an example qmd file that you can use as a starting place for your document. The example qmd will have the same name as the parent folder. For example, if your the parent folder is called PA2, the template will be named PA2.qmd. To preview a pdf version of this file, run:
+This will install the extension and create a **book project** with multiple chapter files:
 
+```
+_quarto.yml              # Central configuration (metadata, chapter order)
+index.qmd                # Front matter (abstract, TOC, abbreviations)
+1-einleitung.qmd         # Chapter 1: Introduction
+2-literatur.qmd          # Chapter 2: Literature review
+3-methoden.qmd           # Chapter 3: Methods
+4-ergebnisse.qmd         # Chapter 4: Results
+5-diskussion.qmd         # Chapter 5: Discussion
+references.qmd           # Bibliography
+6-anhang-rohdaten.qmd    # Appendix A
+7-anhang-statistik.qmd   # Appendix B
+_extensions/             # Template extension (do not edit)
+cover.png                # Cover image
+references.bib           # BibTeX file
+```
+
+All metadata (title, author, supervisors, etc.) is configured centrally in `_quarto.yml`. See the [Manual](manual.qmd#sec-metadata) for all available fields.
+
+## Previewing your thesis
+
+To preview a PDF version, run:
 
 ```{.bash}
-quarto preview PA2.qmd
-``` 
+quarto preview
+```
 
-This will use typst to render a submittable PDF of your thesis. Typst is very fast. If your document becomes large and you feel typst is too slow, we recommend using the `html` output for previewing your text, and only using typst from time to time. To render a `html` version of your thesis, you run the command with the `--to` argument:
+This will use Typst to render a submittable PDF of your thesis. Typst is very fast. If your document becomes large and you feel Typst is too slow, we recommend using the `html` output for previewing your text, and only using Typst from time to time. To preview an `html` version of your thesis:
 
 ```{.bash}
-quarto preview PA2.qmd --to html
-``` 
+quarto preview --to html
+```
 
+## New to Quarto?
 
-If you are new to quarto:  We've prepared a guide to getting started with Quarto, which starts and the basics and ends with you using this zhaw-lsfm template. The course is available here:
+We've prepared a guide to getting started with Quarto, which starts at the basics and ends with you using this zhaw-lsfm template. The course is available here:
 
 <https://zhaw-adls.github.io/PA2-Quarto-Typst>
-

@@ -10,16 +10,24 @@ format:
 
 This quarto template implements the guidelines and requirements for student theses at ZHAW LSFM as described in @zhaw2024de (german) and @zhaw2024en (english). These guidelines are summarized [here](zhaw-requirements.qmd#sec-requirements).
 
-It is uses the Typst typesetting system for high-quality and fast rendering of PDF output.
+It uses the Typst typesetting system for high-quality and fast rendering of PDF output.
 The template tries to be minimalistic. You won't miss out on any features natively supported by quarto and typst, it simply adds the features required by ZHAW LSFM.
 
-Features: 
+:::{.callout-important}
+## Quarto version requirement
 
-- The ability to enter all the required metadata in the YAML header of your quarto document. This metadata is used in various places throughout the document (see [Manual](manual.qmd#sec-metadata))
+This template requires **Quarto >= 1.9.18**. Check your version with `quarto --version`.
+:::
+
+Features:
+
+- **Book project** with multi-chapter structure — one `.qmd` file per chapter, centrally configured in `_quarto.yml` (see [Manual](manual.qmd#sec-book-structure))
+- The ability to enter all the required metadata in `_quarto.yml`. This metadata is used in various places throughout the document (see [Manual](manual.qmd#sec-metadata))
 - The creation of the title page and imprint page according to ZHAW guidelines (this uses the metadata mentioned above)
-- Settings the default values to match the ZHAW requirements: numbering type, font size, margins, etc. (see [Manual](manual.qmd#sec-defaults))
+- Setting the default values to match the ZHAW requirements: numbering type, font size, margins, etc. (see [Manual](manual.qmd#sec-defaults))
 - Shortcodes to manually place the table of contents, list of figures, list of tables, and bibliography in the document (see [Manual](manual.qmd#sec-shortcodes))
-- Class shortcuts for removing a header numbering and removing it from the table of contents (see [Manual](manual.qmd#sec-chapter-numbering)).
+- **Appendix numbering** — chapters listed under `appendices:` automatically receive A, B, C numbering (see [Manual](manual.qmd#sec-appendix))
+- Class shortcuts for removing a header numbering and removing it from the table of contents (see [Manual](manual.qmd#sec-chapter-numbering))
 - The template also serves as a boilerplate for your thesis document, so you can get started quickly (bibtex included and a scaffold of the document structure)
 
 ## Examples
@@ -32,18 +40,3 @@ Here are some examples of student projects that have used this template:
 - **Modelling Wildlife Corridors** by Lukas Buchmann (2025)
   - [Website](https://github.zhaw.ch/pages/buchmluk/PA2-Modelling_Wildlife_Corridors/)
   - [Repository](https://github.zhaw.ch/buchmluk/PA2-Modelling_Wildlife_Corridors/)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

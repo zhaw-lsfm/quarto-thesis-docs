@@ -61,12 +61,7 @@ The footer contains page numbers as required.
 > 
 > Besteht ein Anhang aus mehreren Teilen, so werden diese mit Anhang A, Anhang B etc. oder mit Anhang 1, Anhang 2 etc. bezeichnet. Auf die Anhänge soll im Text verwiesen werden. Zu Beginn des Anhangs muss ein Anhangsverzeichnis eingeordnet werden.
 
-:::{.callout-note}
-## Todo: not yet implemented
-
-I would like to implement #sec-appendix, and similarly #sec-abstract which all use the default values (unnumbered unlisted for abstract, unnumbered for appendix with automatic removal of page nubmering)
-
-:::
+The template supports appendix numbering (A, B, C) automatically. Chapters listed under `appendices:` in `_quarto.yml` receive alphabetic numbering. See the [Manual](manual.qmd#sec-appendix) for configuration details.
 
 ### References
 

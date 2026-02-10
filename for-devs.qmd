@@ -21,8 +21,8 @@ The separation allows:
 The template repository (`zhaw-lsfm/quarto-thesis`) contains:
 
 1. **Quarto Extension** (`_extensions/zhaw-lsfm/`) - The actual extension with Typst templates, filters, and shortcodes
-2. **Template Scaffolding** (`template.qmd`) - Example document that students use as a starting point
-3. **Minimal Landing Page** (`index.qmd`) - Quick start information with link to full docs
+2. **Book project** — Multi-chapter thesis with `_quarto.yml` configuration and numbered chapter files (`index.qmd`, `1-einleitung.qmd`, ...)
+3. **Book entry point** (`index.qmd`) — Front matter (abstract, TOC, abbreviations) that also serves as the HTML landing page
 
 Students install with:
 
@@ -30,7 +30,7 @@ Students install with:
 quarto use template zhaw-lsfm/quarto-thesis
 ```
 
-This installs the extension and provides `template.qmd` (renamed to match the parent directory), plus supporting files like `cover.png` and `references.bib`. Files listed in `.quartoignore` are NOT provided to students.
+This installs the extension and creates a book project with multiple chapter files, plus supporting files like `cover.png` and `references.bib`. Files listed in `.quartoignore` are NOT provided to students.
 
 ## Documentation Repository Structure
 
@@ -52,13 +52,14 @@ To contribute to the template:
 
 2. Make changes to:
    - `_extensions/zhaw-lsfm/` for extension functionality
-   - `template.qmd` for the example document
-   - `index.qmd` for the landing page
+   - Chapter files (`1-einleitung.qmd`, etc.) for the example content
+   - `_quarto.yml` for project configuration and metadata
+   - `index.qmd` for the front matter / book entry point
 
 3. Test changes:
    ```bash
-   # Test template rendering
-   quarto render template.qmd
+   # Test book rendering
+   quarto render
 
    # Test installation in clean directory
    mkdir ../test-install && cd ../test-install
@@ -67,7 +68,7 @@ To contribute to the template:
 
 4. Commit and push or create pull request
 
-5. Publish landing page:
+5. Publish book to GitHub Pages:
    ```bash
    quarto publish gh-pages
    ```
@@ -102,11 +103,11 @@ To contribute to this documentation:
 
 The documentation website is published at: <https://zhaw-lsfm.github.io/quarto-thesis-docs>
 
-## Template Demo Files
+## Template Demo
 
-The rendered template examples (template.pdf and template.html) are hosted on the template repository's GitHub Pages:
+The rendered book is hosted on the template repository's GitHub Pages:
 
-- PDF Demo: <https://zhaw-lsfm.github.io/quarto-thesis/template.pdf>
-- HTML Demo: <https://zhaw-lsfm.github.io/quarto-thesis/template.html>
+- HTML Demo: <https://zhaw-lsfm.github.io/quarto-thesis/>
+- PDF Demo: <https://zhaw-lsfm.github.io/quarto-thesis/Robuste-Regression-und-Outlier-Erkennung.pdf>
 
 These are linked from this documentation site's navigation menu.

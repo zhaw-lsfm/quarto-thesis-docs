@@ -1,23 +1,56 @@
 # Manual
 
 
+## Book Project Structure {#sec-book-structure}
+
+The template uses a Quarto **book project**. Your thesis is split into multiple `.qmd` files — one per chapter — which are combined during rendering. The chapter order and all metadata are configured in `_quarto.yml`.
+
+### Chapter files
+
+Chapter files are numbered to reflect their order:
+
+| File                       | Role                         |
+|:---------------------------|:-----------------------------|
+| `index.qmd`               | Front matter (abstract, TOC, abbreviations) |
+| `1-einleitung.qmd`        | Chapter 1: Introduction      |
+| `2-literatur.qmd`         | Chapter 2: Literature review |
+| `3-methoden.qmd`          | Chapter 3: Methods           |
+| `4-ergebnisse.qmd`        | Chapter 4: Results           |
+| `5-diskussion.qmd`        | Chapter 5: Discussion        |
+| `references.qmd`          | Bibliography                 |
+| `6-anhang-rohdaten.qmd`   | Appendix A                   |
+| `7-anhang-statistik.qmd`  | Appendix B                   |
+
+You can add, remove, or rename chapter files. Just make sure to update the `chapters:` and `appendices:` lists in `_quarto.yml` accordingly.
+
+### `_quarto.yml` configuration
+
+The `_quarto.yml` file is the central configuration for your thesis. It defines:
+
+- **Chapter order** — under `chapters:` and `appendices:`
+- **All metadata** — title, author, supervisors, etc.
+- **Format settings** — output format options
+
+See @sec-metadata for all available metadata fields.
+
+
 ## Metadata {#sec-metadata}
 
-Here is a list of the metadata fields than can (and should) be used in the YAML header of your quarto document to make use of the features of this template.
+All metadata fields are set in `_quarto.yml` (not in individual chapter files).
 
-Existing fields from quarto that have an effect on the output:
+Standard Quarto fields:
 
 | Field                   | Description                     |
 |:------------------------|:--------------------------------|
-| `title`                 | Title of the thesis
-| `subtitle`              | Optional subtitle
+| `title`                 | Title of the thesis (under `book:`)
+| `subtitle`              | Optional subtitle (under `book:`)
 | `keywords`              | Optional list of keywords for the titlepage
 | `lang`                  | Language of the thesis, only `en` or `de` supported
 | `bibliography`          | the .bib file containing bibtex entries
-| `author`                | multiple authors supported as a YAML list
+| `author`                | multiple authors supported as a YAML list (under `book:`)
 
 
-Note that switching the `lang` field will also change the language of some of the automatically generated text. For example, ZHAW will dieplayed as follows depending on the `lang` field:
+Note that switching the `lang` field will also change the language of some of the automatically generated text. For example, ZHAW will be displayed as follows depending on the `lang` field:
 
 - German (default): "ZÜRCHER HOCHSCHULE FÜR ANGEWANDTE WISSENSCHAFTEN"
 - English: "ZURICH UNIVERSITY OF APPLIED SCIENCES"
@@ -53,57 +86,67 @@ cover-image:
 3. Maximum height constraint (optional, default `5cm`)
 
 
-
-
-
 ## Default settings {#sec-defaults}
 
 The template sets a number of default settings to match the [ZHAW requirements](zhaw-requirements.qmd#sec-requirements). These include:
 
 ```{.yaml}
-citeproc: true                 # <1>
-section-numbering: "1.1."      # <2>
-number-depth: 2                # <3>
-toc-depth: 2                   # <4>
-toc: false                     # <5>
-execute:                       # <6>
-  echo: false                  # <7>
-  warning: false               # <8>
-  error: true                  # <9>
-``` 
-1. Use Pandoc’s citation processing rather than typst's built in style [more information](https://quarto.org/docs/output-formats/typst.html#bibliography)
-2. Number sections in the decimal style
-3. Only number the first two header levels
-4. Number of levels in the talbe of contents (toc)
-5. Don't render a toc automatically (we'll do it manually using shortcodes, see below)
-6. Sets the cell execution options
-7. Don't show the chunk code in the document
-8. Don't show warnings from code chunks
-9. Don't stop the rendering process if an error occurs in the code chunk. Rather, just show the error in the output document
+mainfont: Arial                # <1>
+fontsize: 11pt                 # <2>
+citeproc: true                 # <3>
+section-numbering: "1.1."     # <4>
+number-depth: 2               # <5>
+toc-depth: 2                  # <6>
+toc: false                    # <7>
+execute:                      # <8>
+  echo: false                 # <9>
+  warning: false              # <10>
+  error: true                 # <11>
+```
+1. Default font set to Arial (ZHAW requirement)
+2. Default font size 11pt (ZHAW requirement)
+3. Use Pandoc's citation processing rather than typst's built in style [more information](https://quarto.org/docs/output-formats/typst.html#bibliography)
+4. Number sections in the decimal style
+5. Only number the first two header levels
+6. Number of levels in the table of contents (toc)
+7. Don't render a toc automatically (we'll do it manually using shortcodes, see below)
+8. Sets the cell execution options
+9. Don't show the chunk code in the document
+10. Don't show warnings from code chunks
+11. Don't stop the rendering process if an error occurs in the code chunk. Rather, just show the error in the output document
 
 
+### Font configuration
+
+The template defaults to Arial 11pt, matching ZHAW requirements. The font is configured using Quarto's standard `mainfont` parameter, which you can override in your `_quarto.yml`:
+
+```yaml
+format:
+  zhaw-lsfm-typst:
+    mainfont: "Times New Roman"
+    fontsize: 12pt
+```
+
+If Arial is not installed on your system, you can place font files (`.ttf` or `.otf`) in the `_extensions/zhaw-lsfm/fonts/` directory.
 
 
+## Appendix configuration {#sec-appendix}
 
+Appendix chapters are listed under `appendices:` in `_quarto.yml`:
 
-:::{.callout-note title="todo"}
+```yaml
+book:
+  chapters:
+    - index.qmd
+    - 1-einleitung.qmd
+    # ...
+    - references.qmd
+  appendices:
+    - 6-anhang-rohdaten.qmd
+    - 7-anhang-statistik.qmd
+```
 
-Resolve how fonts are handled in quarto / typst.
-
-- **Default:** Arial 11pt (meets ZHAW requirements)
-- **Built-in fallbacks:** Arial → Helvetica Neue → Helvetica → Liberation Sans → DejaVu Sans → Noto Sans
-- **Easy override:** Set `mainfont` and `fontsize` in your YAML frontmatter
-- **Example override:**
-  ```yaml
-  mainfont: "Times New Roman"
-  fontsize: 12pt
-  ```
-- **Local fonts:** Place font files (.ttf/.otf) in `_extensions/zhaw-lsfm/fonts/` directory for guaranteed availability
-
-
-:::
-
-
+Chapters listed under `appendices:` automatically receive A, B, C numbering instead of the regular decimal numbering. Sub-headings are numbered A.1, A.2, B.1, etc.
 
 
 ## Shortcodes {#sec-shortcodes}
@@ -112,6 +155,3 @@ Resolve how fonts are handled in quarto / typst.
 - To insert a list of tables: `{{{< list-of-tables >}}}`
 - To insert a bibliography: `{{{< references >}}}`
 - To insert a table of contents: `{{{< table-of-contents >}}}`
-
-
-
