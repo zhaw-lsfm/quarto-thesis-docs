@@ -35,3 +35,7 @@ quarto preview
 # Publish to GitHub Pages
 quarto publish gh-pages
 ```
+
+## Todo
+
+- Add a section on publishing (e.g. to gh-pages)
