@@ -11,7 +11,13 @@ website:
     left:
       - href: index.qmd
         text: "Welcome"
-      - getting-started.qmd
+      - text: "Getting Started"
+        menu:
+          - href: getting-started.qmd
+            text: "With the template"
+          - href: https://zhaw-adls.github.io/PA2-Quarto-Typst
+            text: "With Quarto"
+            target: _blank
       - manual.qmd
       - zhaw-requirements.qmd
       - text: "Template Demo"
@@ -25,6 +31,9 @@ website:
     right:
       - href: for-devs.qmd
         text: "For Developers / Contributors"
+      - href: https://github.com/zhaw-lsfm/quarto-thesis/blob/main/CHANGELOG.md
+        text: "Changelog"
+        target: _blank
       - icon: github
         href: https://github.com/zhaw-lsfm/quarto-thesis
         text: "Template Repository"

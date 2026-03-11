@@ -39,7 +39,7 @@ All metadata (title, author, supervisors, etc.) is configured centrally in `_qua
 To preview a PDF version, run:
 
 ```{.bash}
-quarto preview
+quarto preview --to zhaw-lsfm-typst
 ```
 
 This will use Typst to render a submittable PDF of your thesis. Typst is very fast. If your document becomes large and you feel Typst is too slow, we recommend using the `html` output for previewing your text, and only using Typst from time to time. To preview an `html` version of your thesis:
@@ -47,9 +47,3 @@ This will use Typst to render a submittable PDF of your thesis. Typst is very fa
 ```{.bash}
 quarto preview --to zhaw-lsfm-html
 ```
-
-## New to Quarto?
-
-We've prepared a guide to getting started with Quarto, which starts at the basics and ends with you using this zhaw-lsfm template. The course is available here:
-
-<https://zhaw-adls.github.io/PA2-Quarto-Typst>
