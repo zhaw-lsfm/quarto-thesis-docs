@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.11">
+<meta name="generator" content="quarto-1.9.19">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>ZHAW LSFM Thesis Template – ZHAW LSFM Thesis Template Documentation</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -24,7 +27,6 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
-  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -57,10 +59,10 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-a5dfee7ccc7f20503a6465e15a2cff9c.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-3f61aac59b63c3a2d0e87c59ee7d0662.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-403f6c055be3bdf4c12ba0aa40b53e01.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-e4e11be91f94b9a7d2aceee14e5aa125.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -127,15 +129,15 @@ div.csl-indent {
   </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-template-demo" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">📄 Template Demo</span>
+ <span class="menu-text">Template Demo</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-template-demo">    
         <li>
-    <a class="dropdown-item" href="https://zhaw-lsfm.github.io/quarto-thesis/template.pdf" target="_blank">
+    <a class="dropdown-item" href="https://zhaw-lsfm.github.io/quarto-thesis/Robuste-Regression-und-Outlier-Erkennung.pdf" target="_blank">
  <span class="dropdown-text">PDF (for submission)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://zhaw-lsfm.github.io/quarto-thesis/template.html" target="_blank">
+    <a class="dropdown-item" href="https://zhaw-lsfm.github.io/quarto-thesis/" target="_blank">
  <span class="dropdown-text">HTML (for development)</span></a>
   </li>  
     </ul>
@@ -195,14 +197,29 @@ div.csl-indent {
 
 
 <p>This quarto template implements the guidelines and requirements for student theses at ZHAW LSFM as described in <span class="citation" data-cites="zhaw2024de"><em>Abfassung Studentischer Arbeiten</em> (<a href="#ref-zhaw2024de" role="doc-biblioref">2024</a>)</span> (german) and <span class="citation" data-cites="zhaw2024en"><em>Writing Student Assignments</em> (<a href="#ref-zhaw2024en" role="doc-biblioref">2024</a>)</span> (english). These guidelines are summarized <a href="./zhaw-requirements.html#sec-requirements">here</a>.</p>
-<p>It is uses the Typst typesetting system for high-quality and fast rendering of PDF output. The template tries to be minimalistic. You won’t miss out on any features natively supported by quarto and typst, it simply adds the features required by ZHAW LSFM.</p>
+<p>It uses the Typst typesetting system for high-quality and fast rendering of PDF output. The template tries to be minimalistic. You won’t miss out on any features natively supported by quarto and typst, it simply adds the features required by ZHAW LSFM.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Quarto version requirement
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This template requires <strong>Quarto &gt;= 1.9.18</strong>. Check your version with <code>quarto --version</code>.</p>
+</div>
+</div>
 <p>Features:</p>
 <ul>
-<li>The ability to enter all the required metadata in the YAML header of your quarto document. This metadata is used in various places throughout the document (see <a href="./manual.html#sec-metadata">Manual</a>)</li>
+<li><strong>Book project</strong> with multi-chapter structure — one <code>.qmd</code> file per chapter, centrally configured in <code>_quarto.yml</code> (see <a href="./manual.html#sec-book-structure">Manual</a>)</li>
+<li>The ability to enter all the required metadata in <code>_quarto.yml</code>. This metadata is used in various places throughout the document (see <a href="./manual.html#sec-metadata">Manual</a>)</li>
 <li>The creation of the title page and imprint page according to ZHAW guidelines (this uses the metadata mentioned above)</li>
-<li>Settings the default values to match the ZHAW requirements: numbering type, font size, margins, etc. (see <a href="./manual.html#sec-defaults">Manual</a>)</li>
+<li>Setting the default values to match the ZHAW requirements: numbering type, font size, margins, etc. (see <a href="./manual.html#sec-defaults">Manual</a>)</li>
 <li>Shortcodes to manually place the table of contents, list of figures, list of tables, and bibliography in the document (see <a href="./manual.html#sec-shortcodes">Manual</a>)</li>
-<li>Class shortcuts for removing a header numbering and removing it from the table of contents (see <a href="./manual.html#sec-chapter-numbering">Manual</a>).</li>
+<li><strong>Appendix numbering</strong> — chapters listed under <code>appendices:</code> automatically receive A, B, C numbering (see <a href="./manual.html#sec-appendix">Manual</a>)</li>
+<li>Class shortcuts for removing a header numbering and removing it from the table of contents (see <a href="./manual.html#sec-chapter-numbering">Manual</a>)</li>
 <li>The template also serves as a boilerplate for your thesis document, so you can get started quickly (bibtex included and a scaffold of the document structure)</li>
 </ul>
 <section id="examples" class="level2">
@@ -225,12 +242,12 @@ div.csl-indent {
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
 <div id="ref-zhaw2024de" class="csl-entry" role="listitem">
-<em>Abfassung Studentischer Arbeiten</em>. 2024. 5.1.1 ed. Life Sciences und Facility Management Stabsbereich Bildung.
+<em>Abfassung Studentischer Arbeiten</em>. 2024. 5.1.1. Life Sciences und Facility Management Stabsbereich Bildung.
 </div>
 <div id="ref-zhaw2024en" class="csl-entry" role="listitem">
-<em>Writing Student Assignments</em>. 2024. 5.1.1 ed. Life Sciences und Facility Management Stabsbereich Bildung.
+<em>Writing Student Assignments</em>. 2024. 5.1.1. Life Sciences und Facility Management Stabsbereich Bildung.
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.11">
+<meta name="generator" content="quarto-1.9.19">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>getting-started – ZHAW LSFM Thesis Template Documentation</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -72,10 +75,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-a5dfee7ccc7f20503a6465e15a2cff9c.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-3f61aac59b63c3a2d0e87c59ee7d0662.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-403f6c055be3bdf4c12ba0aa40b53e01.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-e4e11be91f94b9a7d2aceee14e5aa125.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -142,15 +145,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-template-demo" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">📄 Template Demo</span>
+ <span class="menu-text">Template Demo</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-template-demo">    
         <li>
-    <a class="dropdown-item" href="https://zhaw-lsfm.github.io/quarto-thesis/template.pdf" target="_blank">
+    <a class="dropdown-item" href="https://zhaw-lsfm.github.io/quarto-thesis/Robuste-Regression-und-Outlier-Erkennung.pdf" target="_blank">
  <span class="dropdown-text">PDF (for submission)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://zhaw-lsfm.github.io/quarto-thesis/template.html" target="_blank">
+    <a class="dropdown-item" href="https://zhaw-lsfm.github.io/quarto-thesis/" target="_blank">
  <span class="dropdown-text">HTML (for development)</span></a>
   </li>  
     </ul>
@@ -186,16 +189,50 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="getting-started" class="level1">
 <h1>Getting started</h1>
-<p>To install the extension use the command:</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Quarto version requirement
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This template requires <strong>Quarto &gt;= 1.9.18</strong>. Check your version with <code>quarto --version</code> and update at <a href="https://quarto.org/docs/download/" class="uri">https://quarto.org/docs/download/</a> if needed.</p>
+</div>
+</div>
+<p>To install the template, create a new directory for your thesis and run:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> use template zhaw-lsfm/quarto-thesis</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>This will install the format extension and create an example qmd file that you can use as a starting place for your document. The example qmd will have the same name as the parent folder. For example, if your the parent folder is called PA2, the template will be named PA2.qmd. To preview a pdf version of this file, run:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> preview PA2.qmd</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>This will use typst to render a submittable PDF of your thesis. Typst is very fast. If your document becomes large and you feel typst is too slow, we recommend using the <code>html</code> output for previewing your text, and only using typst from time to time. To render a <code>html</code> version of your thesis, you run the command with the <code>--to</code> argument:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> preview PA2.qmd <span class="at">--to</span> html</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>If you are new to quarto: We’ve prepared a guide to getting started with Quarto, which starts and the basics and ends with you using this zhaw-lsfm template. The course is available here:</p>
+<p>This will install the extension and create a <strong>book project</strong> with multiple chapter files:</p>
+<pre><code>_quarto.yml              # Central configuration (metadata, chapter order)
+index.qmd                # Front matter (abstract, TOC, abbreviations)
+1-einleitung.qmd         # Chapter 1: Introduction
+2-literatur.qmd          # Chapter 2: Literature review
+3-methoden.qmd           # Chapter 3: Methods
+4-ergebnisse.qmd         # Chapter 4: Results
+5-diskussion.qmd         # Chapter 5: Discussion
+references.qmd           # Bibliography
+6-anhang-rohdaten.qmd    # Appendix A
+7-anhang-statistik.qmd   # Appendix B
+_extensions/             # Template extension (do not edit)
+cover.png                # Cover image
+references.bib           # BibTeX file</code></pre>
+<p>All metadata (title, author, supervisors, etc.) is configured centrally in <code>_quarto.yml</code>. See the <a href="./manual.html#sec-metadata">Manual</a> for all available fields.</p>
+<section id="previewing-your-thesis" class="level2">
+<h2 class="anchored" data-anchor-id="previewing-your-thesis">Previewing your thesis</h2>
+<p>To preview a PDF version, run:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> preview</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This will use Typst to render a submittable PDF of your thesis. Typst is very fast. If your document becomes large and you feel Typst is too slow, we recommend using the <code>html</code> output for previewing your text, and only using Typst from time to time. To preview an <code>html</code> version of your thesis:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> preview <span class="at">--to</span> html</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="new-to-quarto" class="level2">
+<h2 class="anchored" data-anchor-id="new-to-quarto">New to Quarto?</h2>
+<p>We’ve prepared a guide to getting started with Quarto, which starts at the basics and ends with you using this zhaw-lsfm template. The course is available here:</p>
 <p><a href="https://zhaw-adls.github.io/PA2-Quarto-Typst" class="uri">https://zhaw-adls.github.io/PA2-Quarto-Typst</a></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

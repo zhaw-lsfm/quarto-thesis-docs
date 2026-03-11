@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.11">
+<meta name="generator" content="quarto-1.9.19">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>for-devs – ZHAW LSFM Thesis Template Documentation</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -72,10 +75,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-a5dfee7ccc7f20503a6465e15a2cff9c.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-3f61aac59b63c3a2d0e87c59ee7d0662.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-403f6c055be3bdf4c12ba0aa40b53e01.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-e4e11be91f94b9a7d2aceee14e5aa125.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -142,15 +145,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-template-demo" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">📄 Template Demo</span>
+ <span class="menu-text">Template Demo</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-template-demo">    
         <li>
-    <a class="dropdown-item" href="https://zhaw-lsfm.github.io/quarto-thesis/template.pdf" target="_blank">
+    <a class="dropdown-item" href="https://zhaw-lsfm.github.io/quarto-thesis/Robuste-Regression-und-Outlier-Erkennung.pdf" target="_blank">
  <span class="dropdown-text">PDF (for submission)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://zhaw-lsfm.github.io/quarto-thesis/template.html" target="_blank">
+    <a class="dropdown-item" href="https://zhaw-lsfm.github.io/quarto-thesis/" target="_blank">
  <span class="dropdown-text">HTML (for development)</span></a>
   </li>  
     </ul>
@@ -206,12 +209,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The template repository (<code>zhaw-lsfm/quarto-thesis</code>) contains:</p>
 <ol type="1">
 <li><strong>Quarto Extension</strong> (<code>_extensions/zhaw-lsfm/</code>) - The actual extension with Typst templates, filters, and shortcodes</li>
-<li><strong>Template Scaffolding</strong> (<code>template.qmd</code>) - Example document that students use as a starting point</li>
-<li><strong>Minimal Landing Page</strong> (<code>index.qmd</code>) - Quick start information with link to full docs</li>
+<li><strong>Book project</strong> — Multi-chapter thesis with <code>_quarto.yml</code> configuration and numbered chapter files (<code>index.qmd</code>, <code>1-einleitung.qmd</code>, …)</li>
+<li><strong>Book entry point</strong> (<code>index.qmd</code>) — Front matter (abstract, TOC, abbreviations) that also serves as the HTML landing page</li>
 </ol>
 <p>Students install with:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> use template zhaw-lsfm/quarto-thesis</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>This installs the extension and provides <code>template.qmd</code> (renamed to match the parent directory), plus supporting files like <code>cover.png</code> and <code>references.bib</code>. Files listed in <code>.quartoignore</code> are NOT provided to students.</p>
+<p>This installs the extension and creates a book project with multiple chapter files, plus supporting files like <code>cover.png</code> and <code>references.bib</code>. Files listed in <code>.quartoignore</code> are NOT provided to students.</p>
 </section>
 <section id="documentation-repository-structure" class="level2">
 <h2 class="anchored" data-anchor-id="documentation-repository-structure">Documentation Repository Structure</h2>
@@ -232,18 +235,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>Make changes to:</p>
 <ul>
 <li><code>_extensions/zhaw-lsfm/</code> for extension functionality</li>
-<li><code>template.qmd</code> for the example document</li>
-<li><code>index.qmd</code> for the landing page</li>
+<li>Chapter files (<code>1-einleitung.qmd</code>, etc.) for the example content</li>
+<li><code>_quarto.yml</code> for project configuration and metadata</li>
+<li><code>index.qmd</code> for the front matter / book entry point</li>
 </ul></li>
 <li><p>Test changes:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Test template rendering</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render template.qmd</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Test book rendering</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Test installation in clean directory</span></span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> ../test-install <span class="kw">&amp;&amp;</span> <span class="bu">cd</span> ../test-install</span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> use template zhaw-lsfm/quarto-thesis</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li><p>Commit and push or create pull request</p></li>
-<li><p>Publish landing page:</p>
+<li><p>Publish book to GitHub Pages:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> publish gh-pages</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 </ol>
 </section>
@@ -269,12 +273,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 <p>The documentation website is published at: <a href="https://zhaw-lsfm.github.io/quarto-thesis-docs" class="uri">https://zhaw-lsfm.github.io/quarto-thesis-docs</a></p>
 </section>
-<section id="template-demo-files" class="level2">
-<h2 class="anchored" data-anchor-id="template-demo-files">Template Demo Files</h2>
-<p>The rendered template examples (template.pdf and template.html) are hosted on the template repository’s GitHub Pages:</p>
+<section id="template-demo" class="level2">
+<h2 class="anchored" data-anchor-id="template-demo">Template Demo</h2>
+<p>The rendered book is hosted on the template repository’s GitHub Pages:</p>
 <ul>
-<li>PDF Demo: <a href="https://zhaw-lsfm.github.io/quarto-thesis/template.pdf" class="uri">https://zhaw-lsfm.github.io/quarto-thesis/template.pdf</a></li>
-<li>HTML Demo: <a href="https://zhaw-lsfm.github.io/quarto-thesis/template.html" class="uri">https://zhaw-lsfm.github.io/quarto-thesis/template.html</a></li>
+<li>HTML Demo: <a href="https://zhaw-lsfm.github.io/quarto-thesis/" class="uri">https://zhaw-lsfm.github.io/quarto-thesis/</a></li>
+<li>PDF Demo: <a href="https://zhaw-lsfm.github.io/quarto-thesis/Robuste-Regression-und-Outlier-Erkennung.pdf" class="uri">https://zhaw-lsfm.github.io/quarto-thesis/Robuste-Regression-und-Outlier-Erkennung.pdf</a></li>
 </ul>
 <p>These are linked from this documentation site’s navigation menu.</p>
 

@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.11">
+<meta name="generator" content="quarto-1.9.19">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>manual – ZHAW LSFM Thesis Template Documentation</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -72,10 +75,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-a5dfee7ccc7f20503a6465e15a2cff9c.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-3f61aac59b63c3a2d0e87c59ee7d0662.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-403f6c055be3bdf4c12ba0aa40b53e01.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-e4e11be91f94b9a7d2aceee14e5aa125.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -142,15 +145,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-template-demo" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">📄 Template Demo</span>
+ <span class="menu-text">Template Demo</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-template-demo">    
         <li>
-    <a class="dropdown-item" href="https://zhaw-lsfm.github.io/quarto-thesis/template.pdf" target="_blank">
+    <a class="dropdown-item" href="https://zhaw-lsfm.github.io/quarto-thesis/Robuste-Regression-und-Outlier-Erkennung.pdf" target="_blank">
  <span class="dropdown-text">PDF (for submission)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://zhaw-lsfm.github.io/quarto-thesis/template.html" target="_blank">
+    <a class="dropdown-item" href="https://zhaw-lsfm.github.io/quarto-thesis/" target="_blank">
  <span class="dropdown-text">HTML (for development)</span></a>
   </li>  
     </ul>
@@ -186,10 +189,79 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="manual" class="level1">
 <h1>Manual</h1>
+<section id="sec-book-structure" class="level2">
+<h2 class="anchored" data-anchor-id="sec-book-structure">Book Project Structure</h2>
+<p>The template uses a Quarto <strong>book project</strong>. Your thesis is split into multiple <code>.qmd</code> files — one per chapter — which are combined during rendering. The chapter order and all metadata are configured in <code>_quarto.yml</code>.</p>
+<section id="chapter-files" class="level3">
+<h3 class="anchored" data-anchor-id="chapter-files">Chapter files</h3>
+<p>Chapter files are numbered to reflect their order:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 48%">
+<col style="width: 51%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">File</th>
+<th style="text-align: left;">Role</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>index.qmd</code></td>
+<td style="text-align: left;">Front matter (abstract, TOC, abbreviations)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>1-einleitung.qmd</code></td>
+<td style="text-align: left;">Chapter 1: Introduction</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>2-literatur.qmd</code></td>
+<td style="text-align: left;">Chapter 2: Literature review</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>3-methoden.qmd</code></td>
+<td style="text-align: left;">Chapter 3: Methods</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>4-ergebnisse.qmd</code></td>
+<td style="text-align: left;">Chapter 4: Results</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>5-diskussion.qmd</code></td>
+<td style="text-align: left;">Chapter 5: Discussion</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>references.qmd</code></td>
+<td style="text-align: left;">Bibliography</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>6-anhang-rohdaten.qmd</code></td>
+<td style="text-align: left;">Appendix A</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>7-anhang-statistik.qmd</code></td>
+<td style="text-align: left;">Appendix B</td>
+</tr>
+</tbody>
+</table>
+<p>You can add, remove, or rename chapter files. Just make sure to update the <code>chapters:</code> and <code>appendices:</code> lists in <code>_quarto.yml</code> accordingly.</p>
+</section>
+<section id="quarto.yml-configuration" class="level3">
+<h3 class="anchored" data-anchor-id="quarto.yml-configuration"><code>_quarto.yml</code> configuration</h3>
+<p>The <code>_quarto.yml</code> file is the central configuration for your thesis. It defines:</p>
+<ul>
+<li><strong>Chapter order</strong> — under <code>chapters:</code> and <code>appendices:</code></li>
+<li><strong>All metadata</strong> — title, author, supervisors, etc.</li>
+<li><strong>Format settings</strong> — output format options</li>
+</ul>
+<p>See <a href="#sec-metadata" class="quarto-xref">Section&nbsp;1.2</a> for all available metadata fields.</p>
+</section>
+</section>
 <section id="sec-metadata" class="level2">
 <h2 class="anchored" data-anchor-id="sec-metadata">Metadata</h2>
-<p>Here is a list of the metadata fields than can (and should) be used in the YAML header of your quarto document to make use of the features of this template.</p>
-<p>Existing fields from quarto that have an effect on the output:</p>
+<p>All metadata fields are set in <code>_quarto.yml</code> (not in individual chapter files).</p>
+<p>Standard Quarto fields:</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 43%">
@@ -204,11 +276,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tbody>
 <tr class="odd">
 <td style="text-align: left;"><code>title</code></td>
-<td style="text-align: left;">Title of the thesis</td>
+<td style="text-align: left;">Title of the thesis (under <code>book:</code>)</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><code>subtitle</code></td>
-<td style="text-align: left;">Optional subtitle</td>
+<td style="text-align: left;">Optional subtitle (under <code>book:</code>)</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><code>keywords</code></td>
@@ -224,11 +296,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="even">
 <td style="text-align: left;"><code>author</code></td>
-<td style="text-align: left;">multiple authors supported as a YAML list</td>
+<td style="text-align: left;">multiple authors supported as a YAML list (under <code>book:</code>)</td>
 </tr>
 </tbody>
 </table>
-<p>Note that switching the <code>lang</code> field will also change the language of some of the automatically generated text. For example, ZHAW will dieplayed as follows depending on the <code>lang</code> field:</p>
+<p>Note that switching the <code>lang</code> field will also change the language of some of the automatically generated text. For example, ZHAW will be displayed as follows depending on the <code>lang</code> field:</p>
 <ul>
 <li>German (default): “ZÜRCHER HOCHSCHULE FÜR ANGEWANDTE WISSENSCHAFTEN”</li>
 <li>English: “ZURICH UNIVERSITY OF APPLIED SCIENCES”</li>
@@ -310,75 +382,86 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="sec-defaults" class="level2">
 <h2 class="anchored" data-anchor-id="sec-defaults">Default settings</h2>
 <p>The template sets a number of default settings to match the <a href="./zhaw-requirements.html#sec-requirements">ZHAW requirements</a>. These include:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="annotated-cell-2"><pre class="sourceCode yaml code-annotation-code code-with-copy code-annotated"><code class="sourceCode yaml"><a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-2-1" class="code-annotation-target"><a href="#annotated-cell-2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">citeproc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-2-2" class="code-annotation-target"><a href="#annotated-cell-2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">section-numbering</span><span class="kw">:</span><span class="at"> </span><span class="st">"1.1."</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-2-3" class="code-annotation-target"><a href="#annotated-cell-2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">number-depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">2</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-2-4" class="code-annotation-target"><a href="#annotated-cell-2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">toc-depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">2</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-2-5" class="code-annotation-target"><a href="#annotated-cell-2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-2-6" class="code-annotation-target"><a href="#annotated-cell-2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">execute</span><span class="kw">:</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="7" onclick="event.preventDefault();">7</a><span id="annotated-cell-2-7" class="code-annotation-target"><a href="#annotated-cell-2-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">echo</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="8" onclick="event.preventDefault();">8</a><span id="annotated-cell-2-8" class="code-annotation-target"><a href="#annotated-cell-2-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">warning</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="9" onclick="event.preventDefault();">9</a><span id="annotated-cell-2-9" class="code-annotation-target"><a href="#annotated-cell-2-9" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">error</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="annotated-cell-2"><pre class="sourceCode yaml code-annotation-code code-with-copy code-annotated"><code class="sourceCode yaml"><a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-2-1" class="code-annotation-target"><a href="#annotated-cell-2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mainfont</span><span class="kw">:</span><span class="at"> Arial</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-2-2" class="code-annotation-target"><a href="#annotated-cell-2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">fontsize</span><span class="kw">:</span><span class="at"> 11pt</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-2-3" class="code-annotation-target"><a href="#annotated-cell-2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">citeproc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-2-4" class="code-annotation-target"><a href="#annotated-cell-2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">section-numbering</span><span class="kw">:</span><span class="at"> </span><span class="st">"1.1."</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-2-5" class="code-annotation-target"><a href="#annotated-cell-2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">number-depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">2</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-2-6" class="code-annotation-target"><a href="#annotated-cell-2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">toc-depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">2</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="7" onclick="event.preventDefault();">7</a><span id="annotated-cell-2-7" class="code-annotation-target"><a href="#annotated-cell-2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="8" onclick="event.preventDefault();">8</a><span id="annotated-cell-2-8" class="code-annotation-target"><a href="#annotated-cell-2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">execute</span><span class="kw">:</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="9" onclick="event.preventDefault();">9</a><span id="annotated-cell-2-9" class="code-annotation-target"><a href="#annotated-cell-2-9" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">echo</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="10" onclick="event.preventDefault();">10</a><span id="annotated-cell-2-10" class="code-annotation-target"><a href="#annotated-cell-2-10" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">warning</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="11" onclick="event.preventDefault();">11</a><span id="annotated-cell-2-11" class="code-annotation-target"><a href="#annotated-cell-2-11" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">error</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-2" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-2" data-code-lines="1" data-code-annotation="1">Use Pandoc’s citation processing rather than typst’s built in style <a href="https://quarto.org/docs/output-formats/typst.html#bibliography">more information</a></span>
+<span data-code-cell="annotated-cell-2" data-code-lines="1" data-code-annotation="1">Default font set to Arial (ZHAW requirement)</span>
 </dd>
 <dt data-target-cell="annotated-cell-2" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-2" data-code-lines="2" data-code-annotation="2">Number sections in the decimal style</span>
+<span data-code-cell="annotated-cell-2" data-code-lines="2" data-code-annotation="2">Default font size 11pt (ZHAW requirement)</span>
 </dd>
 <dt data-target-cell="annotated-cell-2" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-2" data-code-lines="3" data-code-annotation="3">Only number the first two header levels</span>
+<span data-code-cell="annotated-cell-2" data-code-lines="3" data-code-annotation="3">Use Pandoc’s citation processing rather than typst’s built in style <a href="https://quarto.org/docs/output-formats/typst.html#bibliography">more information</a></span>
 </dd>
 <dt data-target-cell="annotated-cell-2" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-cell="annotated-cell-2" data-code-lines="4" data-code-annotation="4">Number of levels in the talbe of contents (toc)</span>
+<span data-code-cell="annotated-cell-2" data-code-lines="4" data-code-annotation="4">Number sections in the decimal style</span>
 </dd>
 <dt data-target-cell="annotated-cell-2" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-cell="annotated-cell-2" data-code-lines="5" data-code-annotation="5">Don’t render a toc automatically (we’ll do it manually using shortcodes, see below)</span>
+<span data-code-cell="annotated-cell-2" data-code-lines="5" data-code-annotation="5">Only number the first two header levels</span>
 </dd>
 <dt data-target-cell="annotated-cell-2" data-target-annotation="6">6</dt>
 <dd>
-<span data-code-cell="annotated-cell-2" data-code-lines="6" data-code-annotation="6">Sets the cell execution options</span>
+<span data-code-cell="annotated-cell-2" data-code-lines="6" data-code-annotation="6">Number of levels in the table of contents (toc)</span>
 </dd>
 <dt data-target-cell="annotated-cell-2" data-target-annotation="7">7</dt>
 <dd>
-<span data-code-cell="annotated-cell-2" data-code-lines="7" data-code-annotation="7">Don’t show the chunk code in the document</span>
+<span data-code-cell="annotated-cell-2" data-code-lines="7" data-code-annotation="7">Don’t render a toc automatically (we’ll do it manually using shortcodes, see below)</span>
 </dd>
 <dt data-target-cell="annotated-cell-2" data-target-annotation="8">8</dt>
 <dd>
-<span data-code-cell="annotated-cell-2" data-code-lines="8" data-code-annotation="8">Don’t show warnings from code chunks</span>
+<span data-code-cell="annotated-cell-2" data-code-lines="8" data-code-annotation="8">Sets the cell execution options</span>
 </dd>
 <dt data-target-cell="annotated-cell-2" data-target-annotation="9">9</dt>
 <dd>
-<span data-code-cell="annotated-cell-2" data-code-lines="9" data-code-annotation="9">Don’t stop the rendering process if an error occurs in the code chunk. Rather, just show the error in the output document</span>
+<span data-code-cell="annotated-cell-2" data-code-lines="9" data-code-annotation="9">Don’t show the chunk code in the document</span>
+</dd>
+<dt data-target-cell="annotated-cell-2" data-target-annotation="10">10</dt>
+<dd>
+<span data-code-cell="annotated-cell-2" data-code-lines="10" data-code-annotation="10">Don’t show warnings from code chunks</span>
+</dd>
+<dt data-target-cell="annotated-cell-2" data-target-annotation="11">11</dt>
+<dd>
+<span data-code-cell="annotated-cell-2" data-code-lines="11" data-code-annotation="11">Don’t stop the rendering process if an error occurs in the code chunk. Rather, just show the error in the output document</span>
 </dd>
 </dl>
-<div class="callout callout-style-default callout-note callout-titled" title="todo">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>todo
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Resolve how fonts are handled in quarto / typst.</p>
-<ul>
-<li><p><strong>Default:</strong> Arial 11pt (meets ZHAW requirements)</p></li>
-<li><p><strong>Built-in fallbacks:</strong> Arial → Helvetica Neue → Helvetica → Liberation Sans → DejaVu Sans → Noto Sans</p></li>
-<li><p><strong>Easy override:</strong> Set <code>mainfont</code> and <code>fontsize</code> in your YAML frontmatter</p></li>
-<li><p><strong>Example override:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mainfont</span><span class="kw">:</span><span class="at"> </span><span class="st">"Times New Roman"</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">fontsize</span><span class="kw">:</span><span class="at"> 12pt</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-<li><p><strong>Local fonts:</strong> Place font files (.ttf/.otf) in <code>_extensions/zhaw-lsfm/fonts/</code> directory for guaranteed availability</p></li>
-</ul>
-</div>
-</div>
+<section id="font-configuration" class="level3">
+<h3 class="anchored" data-anchor-id="font-configuration">Font configuration</h3>
+<p>The template defaults to Arial 11pt, matching ZHAW requirements. The font is configured using Quarto’s standard <code>mainfont</code> parameter, which you can override in your <code>_quarto.yml</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">zhaw-lsfm-typst</span><span class="kw">:</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">mainfont</span><span class="kw">:</span><span class="at"> </span><span class="st">"Times New Roman"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">fontsize</span><span class="kw">:</span><span class="at"> 12pt</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>If Arial is not installed on your system, you can place font files (<code>.ttf</code> or <code>.otf</code>) in the <code>_extensions/zhaw-lsfm/fonts/</code> directory.</p>
+</section>
+</section>
+<section id="sec-appendix" class="level2">
+<h2 class="anchored" data-anchor-id="sec-appendix">Appendix configuration</h2>
+<p>Appendix chapters are listed under <code>appendices:</code> in <code>_quarto.yml</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">book</span><span class="kw">:</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">chapters</span><span class="kw">:</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> index.qmd</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> 1-einleitung.qmd</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">    # ...</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> references.qmd</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">appendices</span><span class="kw">:</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> 6-anhang-rohdaten.qmd</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> 7-anhang-statistik.qmd</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Chapters listed under <code>appendices:</code> automatically receive A, B, C numbering instead of the regular decimal numbering. Sub-headings are numbered A.1, A.2, B.1, etc.</p>
 </section>
 <section id="sec-shortcodes" class="level2">
 <h2 class="anchored" data-anchor-id="sec-shortcodes">Shortcodes</h2>
