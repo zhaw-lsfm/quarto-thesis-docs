@@ -119,16 +119,16 @@ execute:                      # <8>
 
 ### Font configuration
 
-The template defaults to Arial 11pt, matching ZHAW requirements. The font is configured using Quarto's standard `mainfont` parameter, which you can override in your `_quarto.yml`:
+The template does not set a default font — Typst will use its built-in default. ZHAW recommends Arial 11pt but does not require it. To use a specific font, set `mainfont` in your `_quarto.yml`:
 
 ```yaml
 format:
   zhaw-lsfm-typst:
-    mainfont: "Times New Roman"
-    fontsize: 12pt
+    mainfont: "Arial"
+    fontsize: 11pt
 ```
 
-If Arial is not installed on your system, you can place font files (`.ttf` or `.otf`) in the `_extensions/zhaw-lsfm/fonts/` directory.
+If the font is not installed on your system, place the font files (`.ttf` or `.otf`) in the `_extensions/zhaw-lsfm/fonts/` directory and Typst will find them automatically.
 
 
 ## Appendix configuration {#sec-appendix}
