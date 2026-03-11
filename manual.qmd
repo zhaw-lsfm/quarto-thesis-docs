@@ -11,15 +11,16 @@ Chapter files are numbered to reflect their order:
 
 | File                       | Role                         |
 |:---------------------------|:-----------------------------|
-| `index.qmd`               | Front matter (abstract, TOC, abbreviations) |
-| `1-einleitung.qmd`        | Chapter 1: Introduction      |
-| `2-literatur.qmd`         | Chapter 2: Literature review |
-| `3-methoden.qmd`          | Chapter 3: Methods           |
-| `4-ergebnisse.qmd`        | Chapter 4: Results           |
-| `5-diskussion.qmd`        | Chapter 5: Discussion        |
+| `index.qmd`               | Front matter (TOC, Typst only) |
+| `1-zusammenfassung.qmd`   | Abstract / Zusammenfassung   |
+| `2-einleitung.qmd`        | Chapter 1: Introduction      |
+| `3-literatur.qmd`         | Chapter 2: Literature review |
+| `4-methoden.qmd`          | Chapter 3: Methods           |
+| `5-ergebnisse.qmd`        | Chapter 4: Results           |
+| `6-diskussion.qmd`        | Chapter 5: Discussion        |
 | `references.qmd`          | Bibliography                 |
-| `6-anhang-rohdaten.qmd`   | Appendix A                   |
-| `7-anhang-statistik.qmd`  | Appendix B                   |
+| `7-anhang-rohdaten.qmd`   | Appendix A                   |
+| `8-anhang-statistik.qmd`  | Appendix B                   |
 
 You can add, remove, or rename chapter files. Just make sure to update the `chapters:` and `appendices:` lists in `_quarto.yml` accordingly.
 
@@ -68,7 +69,7 @@ Additional fields provided by this template:
 | `study-direction`       | e.g. "Umweltingenieurwesen"
 | `supervisors`           | with title, name and affiliation
 | `confidential`          | `true` marks the thesis as confidential. default is `false`
-| `cover-image`           | optional. Has configurable sizing options (see example below)
+| `zhaw-cover-image`      | optional. Has configurable sizing options (see example below)
 
 
 ### Cover Image Configuration
@@ -76,7 +77,7 @@ Additional fields provided by this template:
 
 Basic usage:
 ```{.yaml}
-cover-image:
+zhaw-cover-image:
   src: cover.png         # <1>
   max-width: 100%        # <2>
   max-height: 5cm        # <3>
@@ -142,8 +143,8 @@ book:
     # ...
     - references.qmd
   appendices:
-    - 6-anhang-rohdaten.qmd
-    - 7-anhang-statistik.qmd
+    - 7-anhang-rohdaten.qmd
+    - 8-anhang-statistik.qmd
 ```
 
 Chapters listed under `appendices:` automatically receive A, B, C numbering instead of the regular decimal numbering. Sub-headings are numbered A.1, A.2, B.1, etc.

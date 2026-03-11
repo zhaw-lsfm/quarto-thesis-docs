@@ -17,15 +17,16 @@ This will install the extension and create a **book project** with multiple chap
 
 ```
 _quarto.yml              # Central configuration (metadata, chapter order)
-index.qmd                # Front matter (abstract, TOC, abbreviations)
-1-einleitung.qmd         # Chapter 1: Introduction
-2-literatur.qmd          # Chapter 2: Literature review
-3-methoden.qmd           # Chapter 3: Methods
-4-ergebnisse.qmd         # Chapter 4: Results
-5-diskussion.qmd         # Chapter 5: Discussion
+index.qmd                # Front matter (TOC, Typst only)
+1-zusammenfassung.qmd    # Abstract / Zusammenfassung
+2-einleitung.qmd         # Chapter 1: Introduction
+3-literatur.qmd          # Chapter 2: Literature review
+4-methoden.qmd           # Chapter 3: Methods
+5-ergebnisse.qmd         # Chapter 4: Results
+6-diskussion.qmd         # Chapter 5: Discussion
 references.qmd           # Bibliography
-6-anhang-rohdaten.qmd    # Appendix A
-7-anhang-statistik.qmd   # Appendix B
+7-anhang-rohdaten.qmd    # Appendix A
+8-anhang-statistik.qmd   # Appendix B
 _extensions/             # Template extension (do not edit)
 cover.png                # Cover image
 references.bib           # BibTeX file
@@ -44,7 +45,7 @@ quarto preview
 This will use Typst to render a submittable PDF of your thesis. Typst is very fast. If your document becomes large and you feel Typst is too slow, we recommend using the `html` output for previewing your text, and only using Typst from time to time. To preview an `html` version of your thesis:
 
 ```{.bash}
-quarto preview --to html
+quarto preview --to zhaw-lsfm-html
 ```
 
 ## New to Quarto?
