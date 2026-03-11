@@ -11,7 +11,7 @@ Chapter files are numbered to reflect their order:
 
 | File                       | Role                         |
 |:---------------------------|:-----------------------------|
-| `index.qmd`               | Front matter (TOC, Typst only) |
+| `index.qmd`               | Title page (HTML) + TOC (Typst only) |
 | `1-zusammenfassung.qmd`   | Abstract / Zusammenfassung   |
 | `2-einleitung.qmd`        | Chapter 1: Introduction      |
 | `3-literatur.qmd`         | Chapter 2: Literature review |
@@ -138,8 +138,9 @@ Appendix chapters are listed under `appendices:` in `_quarto.yml`:
 ```yaml
 book:
   chapters:
-    - index.qmd
-    - 1-einleitung.qmd
+    - file: index.qmd
+      text: "Titelseite"
+    - 1-zusammenfassung.qmd
     # ...
     - references.qmd
   appendices:
@@ -152,7 +153,8 @@ Chapters listed under `appendices:` automatically receive A, B, C numbering inst
 
 ## Shortcodes {#sec-shortcodes}
 
+- To insert the ZHAW title block (HTML only, used in `index.qmd`): `{{{< zhaw-title-block >}}}`
+- To insert a table of contents (Typst only): `{{{< table-of-contents >}}}`
 - To insert a list of figures: `{{{< list-of-figures >}}}`
 - To insert a list of tables: `{{{< list-of-tables >}}}`
 - To insert a bibliography: `{{{< references >}}}`
-- To insert a table of contents: `{{{< table-of-contents >}}}`
