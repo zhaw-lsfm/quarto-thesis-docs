@@ -65,11 +65,6 @@ The template supports appendix numbering (A, B, C) automatically. Chapters liste
 
 ### References
 
-> APA (7th ed.) 
+> APA (7th ed.)
 
-:::{.callout-note}
-## Todo:
-
-Either implement numerical citatations or highight this drawback (if there is one) in the documentation
-
-:::
+The template bundles an **APA 6th edition** CSL file and applies it automatically. This is the closest publicly available version to the required 7th edition and covers the vast majority of citation types. No additional configuration is needed.

@@ -24,9 +24,9 @@ index.qmd                # Front matter (TOC, Typst only)
 4-methoden.qmd           # Chapter 3: Methods
 5-ergebnisse.qmd         # Chapter 4: Results
 6-diskussion.qmd         # Chapter 5: Discussion
-references.qmd           # Bibliography
-7-anhang-rohdaten.qmd    # Appendix A
-8-anhang-statistik.qmd   # Appendix B
+7-references.qmd         # Bibliography
+8-anhang-rohdaten.qmd    # Appendix A
+9-anhang-statistik.qmd   # Appendix B
 _extensions/             # Template extension (do not edit)
 cover.png                # Cover image
 references.bib           # BibTeX file

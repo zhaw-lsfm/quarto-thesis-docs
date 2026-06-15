@@ -13,6 +13,12 @@ This quarto template implements the guidelines and requirements for student thes
 It uses the Typst typesetting system for high-quality and fast rendering of PDF output.
 The template tries to be minimalistic. You won't miss out on any features natively supported by quarto and typst, it simply adds the features required by ZHAW LSFM.
 
+:::{.callout-note}
+## Template version
+
+These docs describe **template v0.4.0**. Check the [Changelog](https://github.com/zhaw-lsfm/quarto-thesis/blob/main/CHANGELOG.md) for newer versions.
+:::
+
 :::{.callout-important}
 ## Quarto version requirement
 

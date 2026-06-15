@@ -18,9 +18,9 @@ Chapter files are numbered to reflect their order:
 | `4-methoden.qmd`          | Chapter 3: Methods           |
 | `5-ergebnisse.qmd`        | Chapter 4: Results           |
 | `6-diskussion.qmd`        | Chapter 5: Discussion        |
-| `references.qmd`          | Bibliography                 |
-| `7-anhang-rohdaten.qmd`   | Appendix A                   |
-| `8-anhang-statistik.qmd`  | Appendix B                   |
+| `7-references.qmd`        | Bibliography                 |
+| `8-anhang-rohdaten.qmd`   | Appendix A                   |
+| `9-anhang-statistik.qmd`  | Appendix B                   |
 
 You can add, remove, or rename chapter files. Just make sure to update the `chapters:` and `appendices:` lists in `_quarto.yml` accordingly.
 
@@ -142,10 +142,10 @@ book:
       text: "Titelseite"
     - 1-zusammenfassung.qmd
     # ...
-    - references.qmd
+    - 7-references.qmd
   appendices:
-    - 7-anhang-rohdaten.qmd
-    - 8-anhang-statistik.qmd
+    - 8-anhang-rohdaten.qmd
+    - 9-anhang-statistik.qmd
 ```
 
 Chapters listed under `appendices:` automatically receive A, B, C numbering instead of the regular decimal numbering. Sub-headings are numbered A.1, A.2, B.1, etc.
@@ -157,4 +157,14 @@ Chapters listed under `appendices:` automatically receive A, B, C numbering inst
 - To insert a table of contents (Typst only): `{{{< table-of-contents >}}}`
 - To insert a list of figures: `{{{< list-of-figures >}}}`
 - To insert a list of tables: `{{{< list-of-tables >}}}`
-- To insert a bibliography: `{{{< references >}}}`
+
+### Bibliography placement
+
+Place the bibliography in `7-references.qmd` using a native fenced div:
+
+```markdown
+::: {#refs}
+:::
+```
+
+This tells Quarto where to render the reference list and works correctly in both HTML and Typst output. The template already includes this in `7-references.qmd`.
