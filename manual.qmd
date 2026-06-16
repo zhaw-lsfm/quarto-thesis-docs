@@ -168,3 +168,32 @@ Place the bibliography in `7-references.qmd` using a native fenced div:
 ```
 
 This tells Quarto where to render the reference list and works correctly in both HTML and Typst output. The template already includes this in `7-references.qmd`.
+
+
+## Landscape (wide) tables {#sec-landscape}
+
+Wide tables that don't fit in portrait orientation can be placed on a landscape page by wrapping them in a fenced div with the `.landscape` class:
+
+```markdown
+::: {.landscape}
+| Column A | Column B | Column C | Column D | Column E |
+|----------|----------|----------|----------|----------|
+| ...      | ...      | ...      | ...      | ...      |
+
+: My wide table {#tbl-wide}
+:::
+```
+
+This works the same way for code-generated tables:
+
+```markdown
+::: {.landscape}
+```{{r}}
+#| label: tbl-wide
+#| tbl-cap: "My wide table"
+knitr::kable(wide_df)
+```
+:::
+```
+
+The page automatically returns to portrait orientation after the landscape page. In HTML output the div is passed through without any effect.
